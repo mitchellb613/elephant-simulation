@@ -1,8 +1,8 @@
 local Concord = require("concord")
 
 --global variables for max screen size
-MAX_X = 800
-MAX_Y = 600
+MAX_X = 1600
+MAX_Y = 900
 
 --load all modules
 local Assemblages = {}
@@ -28,6 +28,8 @@ for i = 1, 5, 1 do
         :give("position", math.random(0, MAX_X), math.random(0, MAX_Y))
         :assemble(Assemblages.elephant)
 end
+
+love.window.setMode(MAX_X, MAX_Y)
 
 function love.update(dt)
     world:emit("update", dt)
